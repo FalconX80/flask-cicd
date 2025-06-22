@@ -17,17 +17,16 @@ spec:
         image: priyanshubhatt80/flask-cicd:latest
         ports:
         - containerPort: 5000
-	livenessProbe:
-  	httpGet:
-    	path: /
-    	port: 5000
-  	initialDelaySeconds: 5
-  	periodSeconds: 10
-
-	readinessProbe:
-  	httpGet:
-    	path: /
-    	port: 5000
-  	initialDelaySeconds: 5
-  	periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
 
