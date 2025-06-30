@@ -27,12 +27,11 @@ pipeline {
       }
     }
 
-    stage('Deploy to Kubernetes') {
+    stage('Deploy with Ansible') {
       steps {
-        sh 'kubectl apply -f k8s/deployment.yaml'
-        sh 'kubectl apply -f k8s/service.yaml'
+        // If you're running Jenkins on WSL or a Linux agent
+        sh 'ansible-playbook deploy.yml'
       }
     }
   }
 }
-
